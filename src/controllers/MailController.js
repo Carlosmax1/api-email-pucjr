@@ -40,7 +40,7 @@ const MailController = async (request, response) => {
   await client.send(mailBody)
     .then(data => {
       console.log(data);
-      response.status(200).json({status: "OK", content: mailBody})
+      response.status(200).json({status: "OK", content: "Enviado com sucesso"})
     })
     .catch(error => response.status(401).json(error))
 }
