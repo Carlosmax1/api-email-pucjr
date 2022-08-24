@@ -1,19 +1,15 @@
 const express = require('express');
 const dotenv = require('dotenv');
+const cors = require('cors');
 dotenv.config();
 
 const { routes } = require('./routes');
 
 const app = express();
-const port = process.env.PORT;
 
-app.use((res, req, next) => {
-  res.header("Access-Control-Allow-Origin", "*");
-  res.header("Access-Control-Allow-Headers",
-    "Origin, X-Requeted-With, Content-Type, Accept, Authorization, RBR");
-  res.header("Access-Control-Allow-Methods", "GET, POST, PUT, PATCH, DELETE");
-  next();
-})
+app.use(cors());
+
+const port = process.env.PORT;
 
 app.use(express.json());
 
