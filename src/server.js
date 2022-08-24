@@ -6,12 +6,12 @@ dotenv.config();
 const { routes } = require('./routes');
 
 const app = express();
-const port = process.env.PORT;
-
-app.use(express.json());
 app.use(cors({
   origin: 'https://pucjunior.infoalto.com.br'
 }));
+const port = process.env.PORT;
+
+app.use(express.json());
 app.use(routes);
 
 app.listen(port, () => {
