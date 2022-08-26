@@ -47,7 +47,7 @@ const MailController = async (request, response) => {
       return html;
     }
   }
-
+//test
   const body = request.body;
   const { text } = request.body;
   const step5 = verification(text.steps[5]);
